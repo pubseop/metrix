@@ -1,0 +1,75 @@
+header{
+    .page-head{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 14px 20px;
+        .title{
+            h3{
+                @include fonts ('Poppins', 20, 500, 30, #45464E);
+            }
+        }
+        .user{
+            display: flex;
+            .btn-area{
+                width: 32px;
+                height: 32px;         
+                &.notice-btn-area{
+                    margin: 0 12px;
+                    .notice-btn{
+                        background-image: url('../images/header/Notification.png');
+                        background-position: center;
+                        background-size: 20px;
+                        background-repeat: no-repeat;
+                    }
+                }
+                &.gnb-btn-area{
+                    display: none;
+                    margin-left: 12px;
+                    @include mdq-tablet {
+                        display: block;
+                    }
+                    .gnb-btn{
+                        background-image: url('../images/header/Hamburger.png');
+                        background-position: center;
+                        background-size: 25px;
+                        background-repeat: no-repeat;
+                    }
+                }     
+            }
+            @include mdq-mobile {
+                .sel-btn-area{
+                    display: none;
+                }
+            }
+        }
+    }
+    .location{
+        border-top: solid 1px #f1f3f9;
+        padding: 4px 20px;
+        display: flex;
+        .home-icon{
+            width: 16px;    
+            height: 16px;
+            background-image: url('../images/header/Home.png');
+            background-size: cover;
+            background-position: center
+        }
+        .breadcrumb{
+            @include fonts('Inter', 12, 400, 16, #8b8d97);
+            ul{
+                display: flex;
+                li{
+                    margin-left: 10px;
+                    a:hover{
+                        color: $b;
+                    }
+                }
+                li::before{
+                    content: '/';
+                    margin-right: 10px;
+                }
+            }
+        }
+    }
+}

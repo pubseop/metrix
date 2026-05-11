@@ -1,0 +1,105 @@
+.auth-wrap{
+    position: relative;
+    width: 100%;
+    .header-wrap{
+        padding: 14px 82px;
+    }
+    .auth-container{
+        height: calc(100vh - 82px);
+        background-color: #f4f5fa;
+        .auth-cnt{
+            width: 443px;
+            height: 627px;
+            border-radius: 12px;
+            @include center-align;
+            padding: 44px 34px;
+            background-color: $w;
+            &.height-plus{
+                height: 680px;
+            }
+            section{     
+                h1{
+                    width: 60px;
+                    height: 60px;
+                    margin: 0 auto;
+                    position: relative;
+                    img{
+                        @include center-align;
+                    }
+                }
+                .greetings{
+                    margin-top: 30px;
+                    text-align: center;
+                    h3{
+                        @include fonts('Poppins', 20, 500, 30, #000);
+                        span{
+                            color: $b;
+                        }
+                    }
+                    p{
+                        margin-top: 8px;
+                        @include fonts('Inter', 14, 400, 17, #8b8d97);
+                    }
+                }
+                .form{
+                    margin-top: 60px;
+                    .password-box{
+                        margin-top: 30px;
+                        input{
+                            width: calc(100% - 104px);
+                        }
+                    }
+                    .email-box{
+                        margin-top: 30px;
+                    }
+                    .eye-off-icon{
+                        width: 48px;
+                        background-size: 16px;
+                    }
+                }
+                .lock-link{
+                    @include fonts('Inter', 14, 400, 17, $b);
+                    margin-top: 8px;
+                    text-align: right;
+                }
+                .link-btn{
+                    margin-top: 48px;
+                    text-align: center; 
+                    @include fonts('Inter', 14, 400, 17, #8b8d97);
+                    span{
+                        color: $b;
+                    }
+                }
+                .btn-area{
+                    text-align: center;
+                    width: 180px;
+                    height: 58px;
+                    margin: 48px auto 0;
+                    a{
+                        @include fonts('Inter', 20, 400, 58, $w);
+                        display: inline-block;
+                        width: 100%;
+                        height: 100%;
+                        border-radius: 12px;
+                        background-color: $b;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include mdq-tablet{
+    .auth-wrap{
+        .header-wrap{
+            display: none;
+        }
+        .auth-container{
+            height: 100vh;
+            .auth-cnt{
+                max-width: 443px;
+                width: 90%;
+            }
+        }
+    }
+}

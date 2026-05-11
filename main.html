@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Metrix</title>
+    <script src="assets/plugin/vue@2.7.8/vue.js"></script>
+    <script src="assets/plugin/vuex/vuex.js"></script>
+    <script src="assets/plugin/vue-router/vue-router.js"></script>
+    <script src="assets/plugin/httpVueLoader/httpVueLoader.js"></script>
+    <script src="assets/plugin/axios/axios.js"></script>
+    <script src="assets/js/article_data.js"></script>
+    <script src="assets/js/chart_data.js"></script>
+    <script src="assets/js/table_data.js"></script>
+    <script src="assets/js/navigation_data.js"></script>
+    <script src="assets/js/product_data.js"></script>
+    <script src="assets/js/select_data.js"></script>
+    <script src="assets/js/user_data.js"></script>
+    <script src="components/store.js"></script>
+    <script src="components/router.js"></script>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <div id="app">
+        <div class="wrapper">
+            <template v-if="$route.path.includes('/login')||$route.path.includes('/signup')">
+                <auth-main></auth-main>
+            </template>
+            <template v-else>
+                <div class="nav-wrap" @mouseover="checkActive" @mouseout="checkActive" :class="{'nav-active': isActive, 'mobile-active': mobileActive}">
+                    <side-navigation></side-navigation>
+                </div>
+                <main :class="{'main-active': isActive}">
+                    <div class="header-wrap">
+                        <header-component></header-component>
+                    </div>
+                    <div class="container">
+                        <router-view></router-view>
+                    </div>
+                </main>
+            </template>
+            <new-order v-if="modalActive.includes('newOrder')"></new-order>
+            <new-customer v-if="modalActive.includes('newCustomer')"></new-customer>
+        </div>
+    </div>
+    <script>
+        var eventBus = new Vue();
+        var app = new Vue({
+            el: '#app',
+            store,
+            router,
+            components: {
+                'auth-main': httpVueLoader('components/auth/AuthMain.vue'),
+                'side-navigation': httpVueLoader('components/common/SideNavigation.vue'),
+                'header-component': httpVueLoader('components/common/HeaderMain.vue'),
+                'new-order' : httpVueLoader('components/orders/NewOrder.vue'),
+                'new-customer' : httpVueLoader('components/customers/NewCustomer.vue'),
+            },
+            methods: {
+                checkActive() {
+                    this.$store.commit('checkActive')
+                },
+            },
+            computed: {
+                isActive() {
+                    return this.$store.getters["isActive"]
+                },
+                mobileActive() {
+                    return this.$store.getters["mobileActive"]
+                },
+                modalActive() {
+                    return this.$store.getters["modalActive"]
+                },
+            }
+        })
+    </script>
+</body>
+</html>

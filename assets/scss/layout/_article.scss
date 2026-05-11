@@ -1,0 +1,124 @@
+article{
+    background-color: $w;
+    border-radius: 12px;
+}
+.summary{
+    padding: 15px;
+    min-height: 135px;
+    .header{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .icon-box{
+            width: 36px;
+            height: 36px;
+            border-radius: 8px;
+            background-color: rgba(255, 204, 145, 0.16);
+            background-size: 20px;
+            &.point{
+                background-color: rgba(85, 112, 241, 0.12);
+            }
+        }
+    }
+    ul{
+        display: flex;
+        justify-content: space-between;
+        margin-top: 32px;
+        flex-grow: 1;
+        li{
+            width: 100%;
+            .tit{
+                @include fonts ('Inter', 14, 400, 14, #8b8d97);
+                &.tit-ty02{
+                    color: $r;
+                }
+            }
+            .value{
+                @include fonts ('Poppins', 20, 500, 30, #45464e);
+                margin-top: 8px;
+                display: flex;
+                align-items: center;
+                dt{
+                    margin-right: 7px;
+                }
+                dd{
+                    @include fonts ('Inter', 12, 400, 15, $w);
+                    &.plus{
+                        color: $g;
+                    }
+                    &.minus{
+                        color: $r;
+                    }
+                }
+
+            }
+        }
+    }
+}
+.sum-ty03{
+    .header{
+        display: flex;
+        justify-content: flex-start;
+        position: relative;
+        .icon-box{
+            width: 45px;
+            height: 45px;
+            background-size: 28px;
+            margin-right: 24px;
+        }
+        .sum-user{
+            @include fonts('Inter', 14, 400, 17, #8b8d97);
+            dd{
+                font-size: 12px;
+                line-height: 15px;
+                margin-top: 4px;
+                span{
+                    color: #2c2d33;
+                }
+            }
+        }  
+        .state-btn{
+            position: absolute;
+            top: 0; right: 0;
+        }      
+    }
+}
+.sum-ty04{
+    ul{
+        li{
+            .tit{
+                font-size: 12px;
+            }
+            .value{
+                @include fonts ('Inter', 14, 500, 17, #45464e);
+            }
+        }
+    }
+}
+.sum-ty02{
+    background-color: $b;
+    .header{
+        .icon-box{
+            background-color: rgba(255, 255, 255, 0.16);
+        }
+    }
+    ul{
+        li{
+            .tit{
+                color: $w;
+            }
+            .value{
+                color: $w;
+                dd{
+                    color: #dbdeee;
+                    &.plus{
+                        color: #dbdeee;
+                    }
+                    &.minus{
+                        color: #dbdeee;
+                    }
+                }
+            }
+        }
+    }
+}

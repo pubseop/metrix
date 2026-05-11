@@ -1,0 +1,140 @@
+.settings{
+    padding: 20px;
+    section{
+        height: calc(100vh - 127px);
+        min-height: 800px;
+        background-color: $w;
+        border-radius: 12px;
+        padding: 16px 36px;
+        @include mdq-desktop {
+            height: auto;
+        }
+        .nav{
+            ul{
+                max-width: 400px;
+                width: 100%;
+                display: flex;
+                flex-grow: 1;
+                li{
+                    @include fonts('Inter', 16, 400, 40, #abafb1);
+                    width: 100%;
+                    text-align: center;
+                    a{
+                        display: inline-block;
+                        width: 100%;
+                        height: 100%;
+                    }
+                    .router-link-active{
+                        border-bottom: 4px solid $b;
+                        color: #2b2f32;
+                    }
+                }
+            }
+        }
+        article{
+            margin-top: 20px;
+            .settings-header{
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                h5{
+                    @include fonts('Poppins', 20, 500, 58, #45464e);
+                }
+                .btn{
+                    width: 180px;
+                    border-radius: 12px;
+                    background-color: $b;
+                    text-align: center;
+                    button{
+                        @include fonts('Inter', 20, 400, 58, $w);
+                    }
+                }
+            }
+            .contents{
+                margin-top: 30px;
+                display: flex;
+                .profile{
+                    max-width: 375px;
+                    width: 100%;
+                    margin-right: 77px;
+                    ul{
+                        .input-box-area{
+                            margin-top: 16px;
+                            &:first-child{
+                                margin-top: 0;
+                            }
+                            p{
+                                text-indent: 5px;
+                                @include fonts('Inter', 12, 400, 15, #5e6366)
+                            }                      
+                        }
+                        .double{
+                            display: flex;
+                            justify-content: space-between;
+                            .select-box-area{
+                                width: calc(50% - 6px);
+                                .select-box{
+                                    margin-top: 10px;
+                                    .selected{
+                                        .value{
+                                            color: #5e6366;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                .user-image{
+                    .image-box{
+                        width: 172px;
+                        height: 167px;
+                        position: relative;
+                        img{
+                            border-radius: 12px;
+                        }
+                        .img-btn-area{
+                            top: 14px;
+                            right: 14px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include mdq-tablet{
+    .settings{
+        section{
+            article{
+                .contents{
+                    flex-direction: column-reverse;
+                    .profile{
+                        margin-top: 30px;
+                        margin-right: 0;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include mdq-mobile{
+    .settings{
+        section{
+            padding: 16px 20px;
+            article{
+                .settings-header{
+                    .btn{
+                        width: 90px;
+                        height: 30px;
+                        button{
+                            @include fonts('Inter', 14, 400, 30, $w);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

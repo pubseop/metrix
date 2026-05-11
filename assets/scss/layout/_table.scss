@@ -1,0 +1,349 @@
+.table-area {
+    @include fonts('Inter', 14, 400, 17, #6e7079);
+    .title{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        h5{ 
+            @include fonts('Inter', 16, 500, 20, #45464e);
+        }
+        .table-btns{
+            display: flex;
+            li{
+                position: relative;
+                .select-box {
+                    background-image: url('../images/table/fi_chevron-down2.png');
+                    background-position: center right 8px;
+                    border-radius: 4px;
+                    border: 1px solid #53545c;
+                    background-color: $w;
+                    cursor: pointer;
+                    .selected{
+                        padding: 7px 32px 7px 8px;
+                        .value{
+                            @include fonts('Inter', 11, 400, 16, #53545c);
+                        }
+                    }
+                    ul{
+                        .option{
+                            @include fonts('Inter', 11, 400, 16, #abafb1);
+                            height: auto;
+                            &:hover{
+                                color: #000;
+                            }
+                        }
+                    }
+                }
+            }
+            .search-area{
+                border-radius: 4px;
+                border: solid 1px #cfd3d4;
+                margin-right: 8px;
+                display: flex;
+                align-items: center;
+                @include fonts('Inter', 12, 400, 16, #000);
+                input::placeholder{
+                    color: #abafb1;
+                }
+                button{
+                    width: 36px;
+                    height: 30px;
+                    position: relative;
+                    img{
+                        @include center-align
+                    }
+                }
+            }
+            .btn{
+                margin-right: 12px;
+                .popup-wrap{
+                    position: absolute;
+                    z-index: 1;
+                    background-color: $w;
+                    padding: 24px 21px;
+                    border-radius: 12px;
+                    box-shadow: 0 4px 32px 0 rgba(61, 70, 112, 0.08);
+                    &.popup-date{
+                        width: 402px;
+                        height: 289px;
+                        top: -3px; left: -170px;
+                        &.big-popup{
+                            height: 736px;
+                            top: -90px;
+                        }
+                        section{
+                            .checkbox-area{
+                                label{
+                                    cursor: pointer;
+                                }
+                            }
+                            .double{
+                                margin-top: 12px;
+                                .checkbox-area{
+                                    width: 50%;
+                                    &:first-child{
+                                        margin-top: 0;
+                                    }
+                                }
+                            }
+                            hr{
+                                margin-top: 11px;
+                            }
+                            .check-btn{
+                                margin-top: 12px;
+                            }
+                            .btn-area{
+                                margin-top: 16px;
+                                display: flex;
+                                border-radius: 8px;
+                                background-color: rgba(85, 112, 241, 0.17);
+                                button{
+                                    padding: 4.5px;
+                                    border-radius: 8px;
+                                    @include fonts('inter',14,500,21,$b);
+                                }
+                                .btn-on{
+                                    background-color: $b;
+                                    color: $w;
+                                }
+                            }
+                        }
+                    }
+                    &.popup-filter{
+                        width: 317px;
+                        height: 478px;
+                        top: -3px; left: -3px;
+                    }
+                    .popup-header{
+                        h3{
+                            @include fonts('Inter', 16, 500, 24, #1c1d22);
+                        }
+                    }
+                    section{
+                        margin-top: 20px;
+                        .checkbox-area{
+                            display: flex;
+                            align-items: center;
+                            input[type="checkbox"] {
+                                width: 24px;
+                                height: 24px;
+                                border-radius: 8px;
+                                border: solid 1px #cfd3d4;
+                                appearance: none;
+                                cursor: pointer;
+                                margin-right: 20px;
+                            }
+                            input[type="checkbox"]:checked {
+                                background: #cfd3d4;
+                                border: none;
+                            }
+                        }
+                        hr{
+                            background-color: #f1f3f9;
+                            margin-top: 15px;
+                        }
+                        ul{
+                            .input-box-area{
+                                margin-top: 16px;
+                                .select-box{
+                                    border: solid 1px #e1e2e9;
+                                    height: 38px;
+                                    border-radius: 8px;
+                                    margin-top: 8px;
+                                    .value{
+                                        @include fonts('Inter', 14, 400, 24, #1c1d22);
+                                    }
+                                }
+                            }
+                        }
+                        p{
+                            @include fonts('Inter', 12, 400, 15, #53545c);
+                        }
+                        .double{
+                            margin-top: 8px;
+                            .double-item{
+                                width: calc(50% - 6px);
+                            }
+                            p{
+                                @include fonts('Inter', 10, 600, 15, #1c1d22);
+                            }
+                            .input-box{
+                                margin-top: 4px;
+                                background-color: $w;
+                                border-radius: 8px;
+                                border: solid 1px #e1e2e9;
+                                height: 38px;
+                                padding-left: 12px;
+                                input{
+                                    @include fonts('Inter', 14, 500, 17, #1c1d22);
+                                }
+                            }
+                        }
+                        .popup-close{
+                            margin-top: 16px;
+                            border-radius: 12px;
+                            height: 36px;
+                            background-color: $b;
+                            button{
+                                @include fonts('Inter', 14, 400, 22, $w);
+                                display: block;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .table-wrap{
+        width: 100%;
+        white-space: nowrap;
+        overflow-x: auto;
+    }
+    table{
+        width: 100%;
+        min-width: 1260px;
+        margin-top: 20px;
+        tr{
+            td,th{
+                input[type="checkbox"] {
+                    width: 24px;
+                    height: 24px;
+                    border-radius: 8px;
+                    border: solid 1px #cfd3d4;
+                    appearance: none;
+                    cursor: pointer;
+                }
+                input[type="checkbox"]:checked {
+                    background: #cfd3d4;
+                    border: none;
+                }
+            }
+        }
+        thead{
+            border-top: 1px solid #e1e2e9;
+            border-bottom: 1px solid #e1e2e9;
+            tr{
+                th{
+                    @include fonts('Inter', 14, 400, 0, #2c2d33);
+                    padding: 14px 0;
+                    vertical-align: middle;
+                    text-align: left;
+                    &.check{
+                        width: 24px;
+                        height: 24px;
+                        padding-right: 22px;
+                    }
+                    &.image{
+                        width: 58px;
+                    }
+                    span{
+                        margin-right: 5px;
+                    }
+                    i{
+                        display: inline-block;
+                        vertical-align: middle;
+                        width: 16px;
+                        height: 16px;
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+        tbody{
+            border-bottom: 1px solid #e1e2e9;
+            tr{
+                td{
+                    vertical-align: middle;
+                    padding: 12px 0;
+                    b{
+                        margin-right: 5px;
+                    }
+                    i{
+                        display: inline-block;
+                        vertical-align: middle;
+                        width: 16px;
+                        height: 16px;
+                        cursor: pointer;
+                    }
+                }
+                .select-box {
+                    display: inline-block;
+                    background-image: url('../images/table/fi_chevron-down.png');
+                    background-position: center right 11px;
+                    background-color: rgba(94, 99, 102, 0.08);
+                    .selected{
+                        padding: 4px 35px 4px 11px;
+                        .value{
+                            @include fonts('Inter', 12, 400, 15, #8b8d97);
+                        }
+                    }
+                    ul{
+                        .option{
+                            @include fonts('Inter', 12, 400, 15, #8b8d97);
+                            padding: 5px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .pagination{
+        display: flex;
+        justify-content: space-between;
+        margin-top: 10px;
+        .paging{
+            display: flex;
+            align-items: center;
+            .select-box{
+                background-image: url('../images/table/fi_chevron-down.png');
+                background-position: center right 11px;
+                background-color: rgba(94, 99, 102, 0.08);
+                margin-right: 10px;
+                .selected{
+                    padding: 4px 35px 4px 11px;
+                    .value{
+                        @include fonts('Inter', 12, 400, 15, #8b8d97);
+                    }
+                }
+                ul{
+                    .option{
+                        @include fonts('Inter', 12, 400, 15, #8b8d97);
+                        padding: 5px;
+                        &:hover{
+                            color: #000;
+                        }
+                    }
+                }
+            }
+            p{
+                @include fonts('Inter', 14, 400, 17, #666);
+                margin-right: 20px;
+                &.txt{
+                    color: #a6a8b1;
+                }
+            }
+            .btns{
+                width: 40px;
+                height: 16px;
+                display: flex;
+                justify-content: space-between;
+            }
+        }
+    }
+}
+
+@include mdq-tablet {
+    .table-area {
+        .title{
+            .table-btns{
+                display: none;
+            }
+        }
+        .pagination{
+            justify-content: flex-end;
+            .paging:first-child{ 
+                display: none;
+            }
+        }
+    }
+}
