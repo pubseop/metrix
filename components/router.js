@@ -34,33 +34,33 @@ var DatePicker = httpVueLoader('components/common/DatePicker.vue');
 
 var router = new VueRouter({
 	routes: [
-    { 
+    {
       name: 'login',
-      path: '/login', 
+      path: '/login',
       component: LogIn,
       meta: {
         title: 'Auth',
       },
     },
-    { 
+    {
       name: 'signup',
-      path: '/signup', 
+      path: '/signup',
       component: SignUp,
       meta: {
         title: 'Auth',
       },
     },
-	  { 
+	  {
       name: 'dashboard',
-      path: '/', 
-      component: DashboardMain, 
+      path: '/',
+      component: DashboardMain,
       meta: {
         title: 'Dashboard',
       },
     },
-	  { 
+	  {
       name: 'orders',
-      path: '/orders', 
+      path: '/orders',
       component: OrdersMain,
       meta: {
         title: 'Orders',
@@ -84,9 +84,9 @@ var router = new VueRouter({
           }
         ],
       },
-	  { 
+	  {
       name: 'customers',
-      path: '/customers', 
+      path: '/customers',
       component: CustomersMain,
       meta: {
         title: 'Customers',
@@ -110,9 +110,9 @@ var router = new VueRouter({
         }
       ],
     },
-	  { 
+	  {
       name: 'inventory',
-      path: '/inventory', 
+      path: '/inventory',
       component: InventoryMain,
       meta: {
         title: 'Inventory',
@@ -144,18 +144,18 @@ var router = new VueRouter({
         }
       ],
     },
-	  { 
+	  {
       name: 'conversations',
-      path: '/conversations', 
+      path: '/conversations',
       component: ConversationsMain,
       meta: {
         title: 'Conversations',
       },
       // redirect:'/'
     },
-	  { 
+	  {
       name: 'settings',
-      path: '/settings', 
+      path: '/settings',
       component: SettingsMain,
       meta: {
         title: 'Settings',
@@ -176,7 +176,7 @@ var router = new VueRouter({
           meta: {
             title: 'Setting',
           },
-          // redirect:{name:'account'}
+          redirect:{name:'account'}
         },
         {
           name: 'security',
