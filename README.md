@@ -1,9 +1,5 @@
 # Metrix Project
 
-- [Main Page](https://idrpubadmin.github.io/trial_pub_sim/study/metrix/index.html#/)
-
-
-
 퍼블리싱 작업환경
 ---
 - sass : Live sass compiler 사용
@@ -117,5 +113,3 @@ style.scss 구조
 
 - 지원브라우저
 크롬, 엣지, 파이어폭스, 사파리, 오페라
-
-
